@@ -1,5 +1,6 @@
 package com.exercise.android.lab_03_ex3;
 
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,10 +24,39 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*** TO BE COMPLETED ***/
+        rbAdd = (RadioButton)findViewById(R.id.rbAdd);
+        rbSub = (RadioButton)findViewById(R.id.rbSub);
+        rbMul = (RadioButton)findViewById(R.id.rbMul);
+        rbDiv = (RadioButton)findViewById(R.id.rbDiv);
+        btnCalculate = (Button)findViewById(R.id.btnCalculate);
+        etNum1 = (EditText)findViewById(R.id.etNum1);
+        etNum2 = (EditText)findViewById(R.id.etNum2);
+
+
+
     }
 
     public void btnCalculateOnClick(View view) {
-        /*** TO BE COMPLETED ***/
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double ans = 0;
+                double value1 =Double.parseDouble(etNum1.getText().toString());
+                double value2 =Double.parseDouble(etNum2.getText().toString());
+                if(rbAdd.isChecked()){
+                    ans = value1+value2;
+                }
+                if(rbSub.isChecked()){
+                    ans = value1-value2;
+                }
+                if(rbMul.isChecked()){
+                    ans = value1*value2;
+                }
+                if(rbDiv.isChecked()){
+                    ans= value1/value2;
+                }
+                tvAnswer.setText((int) ans);
+            }
+        });
     }
 }
