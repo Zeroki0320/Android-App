@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Lab_03_Ex3</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Calculator">Calculator</string>
+    <string name="Number1">Number1:</string>
+    <string name="add">+</string>
+    <string name="subtract">-</string>
+    <string name="multiple">x</string>
+    <string name="divide">/</string>
+    <string name="Number2">Number2:</string>
+    <string name="Compute">Compute</string>
+    <string name="Answer">Answer =</string>
+</resources>

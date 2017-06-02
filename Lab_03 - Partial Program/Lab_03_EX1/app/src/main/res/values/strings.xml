@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Simple Login</string>
+
+    <string name="username">Enter User Name</string>
+    <string name="hint">First Last Name</string>
+    <string name="login">Login</string>
+    <string name="action_settings">Settings</string>
+</resources>

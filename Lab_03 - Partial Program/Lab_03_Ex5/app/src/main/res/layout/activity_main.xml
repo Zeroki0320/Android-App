@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5sp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Place" />
+    <!-- TO BE COMPLETED
+    <
+        android:id="@+id/edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:??????? />
+    -->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Currency" />
+
+    <!-- TO BE COMPLETED
+    <
+        android:id="@+id/spinner"
+        android:layout_width=????
+        android:layout_height="wrap_content"  />
+    -->
+    <!-- TO BE COMPLETED
+    <
+        android:id="@+id/button"
+        android:layout_margin="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:??????="center"
+        android:text="Get Quotes"
+        android:textStyle="bold" />
+    -->
+    <TextView
+        android:layout_marginTop="40sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Market Price"
+        android:textColor="#ff0000"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/tvplace"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff00"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tvcurrency"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff00"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/showmsg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff00"
+        android:textSize="18sp" />
+</LinearLayout>

@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:id="@+id/rgCoffeeType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="what type of coffee?"
+            android:background="#FF0000"/>
+
+        <RadioButton
+            android:id="@+id/rbLatte"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Latte" />
+
+        <RadioButton
+            android:id="@+id/rbMocha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mocha" />
+
+        <RadioButton
+            android:id="@+id/rbCappuccino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cappuchino" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvCoffee"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="What else in your coffee?"
+        android:background="#FF0000"/>
+
+
+    <CheckBox
+        android:id="@+id/cbCream"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:text="Cream"/>
+
+    <CheckBox
+        android:id="@+id/cbSugar"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Sugar"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay"
+        android:onClick="btPayOnClick" />
+
+</LinearLayout>
