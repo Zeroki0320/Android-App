@@ -11,35 +11,35 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="Place" />
-    <!-- TO BE COMPLETED
-    <
+
+    <AutoCompleteTextView
         android:id="@+id/edit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:??????? />
-    -->
+        android:layout_gravity="center"/>
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="Currency" />
 
-    <!-- TO BE COMPLETED
-    <
+
+    <Spinner
         android:id="@+id/spinner"
-        android:layout_width=????
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"  />
-    -->
-    <!-- TO BE COMPLETED
-    <
+
+
+    <Button
         android:id="@+id/button"
         android:layout_margin="15sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:??????="center"
+        android:layout_gravity="center"
         android:text="Get Quotes"
         android:textStyle="bold" />
-    -->
+
     <TextView
         android:layout_marginTop="40sp"
         android:layout_width="fill_parent"

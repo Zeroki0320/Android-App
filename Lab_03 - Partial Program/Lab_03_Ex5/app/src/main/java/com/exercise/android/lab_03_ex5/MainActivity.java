@@ -72,7 +72,13 @@ public class MainActivity extends ActionBarActivity implements /*** TO BE COMPLE
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*** TO BE COMPLETED ***/
+        tvplace = (TextView)findViewById(R.id.tvplace);
+        edit = (AutoCompleteTextView)findViewById(R.id.edit);
+        Spinner spin = (Spinner)findViewById(R.id.spinner);
+        spin.setOnItemSelectedListener(this);
+        ArrayAdapter<String> aa = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,place_items);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(aa);
     }
 
     private void showMsg(){

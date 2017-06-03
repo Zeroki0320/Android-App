@@ -31,6 +31,7 @@ public class MainActivity extends ActionBarActivity {
         btnCalculate = (Button)findViewById(R.id.btnCalculate);
         etNum1 = (EditText)findViewById(R.id.etNum1);
         etNum2 = (EditText)findViewById(R.id.etNum2);
+        tvAnswer = (TextView) findViewById(R.id.tvAnswer);
 
 
 
@@ -40,22 +41,25 @@ public class MainActivity extends ActionBarActivity {
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double ans = 0;
                 double value1 =Double.parseDouble(etNum1.getText().toString());
                 double value2 =Double.parseDouble(etNum2.getText().toString());
+                double ans = 0.00;
                 if(rbAdd.isChecked()){
-                    ans = value1+value2;
+                    ans=value1+value2;
                 }
                 if(rbSub.isChecked()){
-                    ans = value1-value2;
+                    ans=value1-value2;
                 }
                 if(rbMul.isChecked()){
-                    ans = value1*value2;
+                   ans=value1*value2;
                 }
                 if(rbDiv.isChecked()){
-                    ans= value1/value2;
+                    ans=value1/value2;
                 }
-                tvAnswer.setText((int) ans);
+
+                String Ans =Double.toString(ans);
+
+                tvAnswer.setText(Ans);
             }
         });
     }
