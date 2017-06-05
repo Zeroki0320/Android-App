@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
-public class MainActivity extends ActionBarActivity implements /*** TO BE COMPLETED ***/ {
+public class MainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener /*** TO BE COMPLETED ***/ {
     private TextView tvplace;
     private AutoCompleteTextView edit;
     private String[] place_items = {"Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra",
@@ -74,6 +75,8 @@ public class MainActivity extends ActionBarActivity implements /*** TO BE COMPLE
 
         tvplace = (TextView)findViewById(R.id.tvplace);
         edit = (AutoCompleteTextView)findViewById(R.id.edit);
+        showmsg = (TextView)findViewById(R.id.showmsg);
+        btn= (Button)findViewById(R.id.button);
         Spinner spin = (Spinner)findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
         ArrayAdapter<String> aa = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,place_items);
@@ -81,7 +84,11 @@ public class MainActivity extends ActionBarActivity implements /*** TO BE COMPLE
         spin.setAdapter(aa);
     }
 
+    public void onItemSelected(AdapterView parent, View v, int position, long id){
+        spin.setText(place_items[position]);
+
+
     private void showMsg(){
-        /*** TO BE COMPLETED ***/
+        showmsg.setText()
     }
 }
