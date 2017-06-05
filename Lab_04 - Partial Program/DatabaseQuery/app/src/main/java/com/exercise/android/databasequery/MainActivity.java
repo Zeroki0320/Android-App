@@ -19,13 +19,13 @@ public class MainActivity extends ActionBarActivity {
     private String[] columns = {"sID", "sPassword", "sName", "sGender"};
     private RadioButton rbSID, rbAsc;
     private TableLayout tbData;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*** binding the UI's controls defined in activity_main.xml to Java Code ***/
+        rbSID = (RadioButton)findViewById(R.id.rb_sID);
+        rbAsc= (RadioButton)findViewById(R.id.rb_asc);
 
         initialDB();
     }
@@ -93,15 +93,16 @@ public class MainActivity extends ActionBarActivity {
 
     public void btnShowOnClick(View v) {
         /* check the value of radio buttons */
-        String sortBy =????;
-        String order =????;
+        String sortBy = String.valueOf(rbSID.getText());
+        String order = String.valueOf(rbAsc.getText());
 
         try {
             /* make SQLite Database connection with read only */
-            SQLiteDatabase db =????;
+            SQLiteDatabase db =SQLiteDatabase.openDatabase("/data/data/com.exercise.android.databasequery/eBidDB",null,SQLiteDatabase.CREATE_IF_NECESSARY);
 
             /* set cursor to query the information */
-            Cursor cursor = db.query( ????);
+            String [] args = {sortBy,order};
+            Cursor cursor = db.query("Seller",columns,null,null,null,null,null);
             fillTable(cursor);
 
             /* close the Database */
