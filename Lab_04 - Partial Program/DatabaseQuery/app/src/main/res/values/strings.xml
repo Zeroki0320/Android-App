@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DatabaseQuery</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="rb_asc">Ascending</string>
+    <string name="rb_sid">sID</string>
+    <string name="rb_desc">Descending</string>
+    <string name="rb_sname">sName</string>
+    <string name="btn_show">Show</string>
+</resources>

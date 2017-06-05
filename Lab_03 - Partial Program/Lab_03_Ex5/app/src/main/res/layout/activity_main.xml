@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="Place" />
+        android:text="Place"
+        android:id="@+id/place" />
 
     <AutoCompleteTextView
         android:id="@+id/edit"
@@ -22,7 +23,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="Currency" />
+        android:text="Currency"
+        android:id="@+id/Currency" />
 
 
     <Spinner

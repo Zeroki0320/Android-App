@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/txtData"
+        android:layout_width="fill_parent"
+        android:layout_height="180sp"
+        android:hint="Enter text here ..."
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/btnWriteSDFile"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:text="1. Write File"
+        android:onClick="buttonClick"/>
+    <Button
+        android:id="@+id/btnReadSDFile"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:text="2. Read File"
+        android:onClick="buttonClick"/>
+    <Button
+        android:id="@+id/btnClearScreen"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:text="3. Clear Screen"
+        android:onClick="buttonClick"/>
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:text="4. Close"
+        android:onClick="buttonClick"/>
+    <CheckBox
+        android:id="@+id/cbSDCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SD card" />
+
+</LinearLayout>

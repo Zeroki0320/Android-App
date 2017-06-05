@@ -11,11 +11,15 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.app.Activity;
+
+import org.w3c.dom.Text;
 
 
-public class MainActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener /*** TO BE COMPLETED ***/ {
+public class MainActivity extends Activity implements TextWatcher /*** TO BE COMPLETED ***/ {
     private TextView tvplace;
     private AutoCompleteTextView edit;
+    private TextView place;
     private String[] place_items = {"Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra",
             "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina",
             "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan",
@@ -74,21 +78,38 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
 
         tvplace = (TextView)findViewById(R.id.tvplace);
+        place = (TextView)findViewById(R.id.place);
         edit = (AutoCompleteTextView)findViewById(R.id.edit);
+        edit.addTextChangedListener(this);
+        edit.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,place_items));
         showmsg = (TextView)findViewById(R.id.showmsg);
         btn= (Button)findViewById(R.id.button);
-        Spinner spin = (Spinner)findViewById(R.id.spinner);
-        spin.setOnItemSelectedListener(this);
-        ArrayAdapter<String> aa = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,place_items);
+        tvcurrency = (TextView)findViewById(R.id.tvcurrency);
+        spin =(Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<String> aa = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,currency_items);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(aa);
     }
 
-    public void onItemSelected(AdapterView parent, View v, int position, long id){
-        spin.setText(place_items[position]);
-
-
-    private void showMsg(){
-        showmsg.setText()
+    public void onClick(View view) {
+        tvplace.setText("Place - " + edit.getText());
+        tvcurrency.setText("Currency - " + currency_items[spin.getSelectedItemPosition()]);
+        showmsg.setText("please wait!");
     }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
+
 }
