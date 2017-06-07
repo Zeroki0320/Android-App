@@ -25,7 +25,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         rbSID = (RadioButton)findViewById(R.id.rb_sID);
-        rbAsc= (RadioButton)findViewById(R.id.rb_asc);
+        rbAsc = (RadioButton)findViewById(R.id.rb_asc);
+        tbData = (TableLayout)findViewById(R.id.tbData);
 
         initialDB();
     }
@@ -93,16 +94,26 @@ public class MainActivity extends ActionBarActivity {
 
     public void btnShowOnClick(View v) {
         /* check the value of radio buttons */
-        String sortBy = String.valueOf(rbSID.getText());
-        String order = String.valueOf(rbAsc.getText());
+
+        String sortBy = "";
+        String order = "";
+        if(rbSID.isChecked())
+            sortBy = "sID";
+        else
+            sortBy = "sName";
+
+        if(rbAsc.isChecked())
+            order = "ASC";
+        else
+            order = "DESC";
 
         try {
             /* make SQLite Database connection with read only */
-            SQLiteDatabase db =SQLiteDatabase.openDatabase("/data/data/com.exercise.android.databasequery/eBidDB",null,SQLiteDatabase.CREATE_IF_NECESSARY);
+            SQLiteDatabase db =SQLiteDatabase.openDatabase("/data/data/com.exercise.android.databasequery/eBidDB",null,SQLiteDatabase.OPEN_READONLY);
 
             /* set cursor to query the information */
             String [] args = {sortBy,order};
-            Cursor cursor = db.query("Seller",columns,null,null,null,null,null);
+            Cursor cursor = db.query("Seller",columns,null,null,null,null,sortBy+" "+order);
             fillTable(cursor);
 
             /* close the Database */

@@ -76,9 +76,12 @@ public class MainActivity extends ActionBarActivity {
             /* Q4a */
             // Insert
             // [code here]
+            db.execSQL("INSERT INTO Member(mid, name, password, age) values"
+                    + "(1008, 'Ronald Tang', 'ilovehk', 66); ");
 
             // Update
             // [code here]
+            db.execSQL("update Table member");
 
             // Delete
             // [code here]
