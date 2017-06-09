@@ -13,6 +13,8 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Member;
+
 
 public class MainActivity extends ActionBarActivity {
     private String[] columns = {"mid", "name", "password", "age"};
@@ -81,15 +83,21 @@ public class MainActivity extends ActionBarActivity {
 
             // Update
             // [code here]
-            db.execSQL("update Table member");
+            db.execSQL("UPDATE Member SET password = winnie where mid=1005 ");
 
             // Delete
             // [code here]
-
+            db.execSQL("DELETE FROM Member WHERE mid = 1003")
             /* Q4b */
             // Insert
             // [code here]
-
+            public int insert(Member member){
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put(Member.mid, 1003);
+                db.insert(Member.TABLE, null, values);
+            }
+            }
             // Update
             // [code here]
 
