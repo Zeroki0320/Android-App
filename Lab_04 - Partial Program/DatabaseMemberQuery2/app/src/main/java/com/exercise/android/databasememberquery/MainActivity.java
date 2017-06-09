@@ -18,6 +18,7 @@ import java.lang.reflect.Member;
 
 public class MainActivity extends ActionBarActivity {
     private String[] columns = {"mid", "name", "password", "age"};
+    ContentValues pairValue = new ContentValues();
     private TableLayout tbData;
     private Result result;
 
@@ -70,6 +71,26 @@ public class MainActivity extends ActionBarActivity {
         initialDB();
     }
 
+    private void insert() {
+
+        pairValue.put("mid", "1009");
+        pairValue.put("name", "Ken Chan");
+        pairValue.put("password", "ken");
+        pairValue.put("age", "13");
+        Toast.makeText(this, "Row "  + " is added.",
+                Toast.LENGTH_LONG).show();
+    }
+    private void update(){
+        pairValue.put("password","246810");
+        Toast.makeText(this, " row is updated.",
+                Toast.LENGTH_LONG).show();
+
+    }
+    private void delete(){
+        Toast.makeText(this, " row is deleted.",
+                Toast.LENGTH_LONG).show();
+
+    }
     public void btnActionOnClick(View v) {
         try {
             SQLiteDatabase db = SQLiteDatabase.openDatabase("/data/data/com.exercise.android.databasememberquery/MemberDB",
@@ -85,30 +106,29 @@ public class MainActivity extends ActionBarActivity {
             // [code here]
             db.execSQL("UPDATE Member SET password = winnie where mid=1005 ");
 
-            // Delete
+            // Delete\
             // [code here]
-            db.execSQL("DELETE FROM Member WHERE mid = 1003")
+            db.execSQL("DELETE FROM Member WHERE mid = 1003");
             /* Q4b */
             // Insert
             // [code here]
-            public int insert(Member member){
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
-                ContentValues values = new ContentValues();
-                values.put(Member.mid, 1003);
-                db.insert(Member.TABLE, null, values);
-            }
-            }
+            db.insert("Member", null, pairValue);
+
             // Update
             // [code here]
-
+            db.update("Member",pairValue,null,null);
             // Delete
             // [code here]
+            db.delete("Member","mid=1002",null);
+
+
+
 
             result.fillTable(db.query("Member", columns, null, null, null, null, null));
-
             db.close();
         } catch (SQLiteException e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
+
     }
 }
