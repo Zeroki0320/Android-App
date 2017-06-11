@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IveCode</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="ive_code_url">http://itdmoodle.hung0530.com/ptms/ive.json</string>
+</resources>
