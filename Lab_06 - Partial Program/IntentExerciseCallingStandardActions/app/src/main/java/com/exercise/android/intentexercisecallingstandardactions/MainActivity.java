@@ -39,26 +39,32 @@ public class MainActivity extends ActionBarActivity {
                         act = new Intent(Intent.ACTION_VIEW);
                         act.setData(Uri.parse("sms:"));
                         startActivity(act);
+                        break;
 
                     case 1:
                         act = new Intent(Intent.ACTION_VIEW,Uri.parse("http://www.vtc.edu.hk"));
                         startActivity(act);
+                        break;
 
                     case 2:
                         act = new Intent(Intent.ACTION_VIEW,Uri.parse("https://en.wiktionary.org/wiki/android"));
                         startActivity(act);
+                        break;
 
                     case 3:
                         act = new Intent(Intent.ACTION_VIEW,Uri.parse("https://en.wikipedia.org/wiki/Android_(operating_system)"));
                         startActivity(act);
+                        break;
 
                     case 4:
                         act = new Intent(Intent.ACTION_VIEW,Uri.parse("geo:cbll=22.3199,114.036?z=17"));
                         startActivity(act);
+                        break;
 
                     case 5:
                         act = new Intent(Intent.ACTION_VIEW,Uri.parse("google.streetview:cbll=22.3192,114.1768&cbp=1,200,,0,1"));
                         startActivity(act);
+                        break;
 
                     case 6:
                         intent = new Intent(Intent.ACTION_VIEW,
