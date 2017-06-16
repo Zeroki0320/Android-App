@@ -27,17 +27,11 @@ public class MainActivity extends ActionBarActivity {
         TVmsg = (TextView)findViewById(R.id.TVmsg);
     }
 
-    public void run(){
-        double millis = System.currentTimeMillis() - starttime;
-        int seconds = (int) (millis / 1000);
-        int minutes = seconds / 60;
-        seconds     = seconds % 60;
-
-        TVmsg.setText(String.format("%d:%02d", minutes, seconds));
-    }
-
-
         public void clickHandler (View view){
+            Intent i = new Intent(this, GameActivity.class);
+            i.putExtra("Value1", "Value one from Activity1 ");
+            i.putExtra("Value2", "Value two from Activity1");
+            startActivityForResult(i, REQUEST_CODE);
 
         }
 
@@ -47,6 +41,8 @@ public class MainActivity extends ActionBarActivity {
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
             if (data.hasExtra("playTime")) {
                 TextView tv = (TextView) findViewById(R.id.TVmsg);
+                        tv.setText("Result from Activity 2:\n"
+                                + data.getExtras().getString("returnKey1"));
 
             }
         }
