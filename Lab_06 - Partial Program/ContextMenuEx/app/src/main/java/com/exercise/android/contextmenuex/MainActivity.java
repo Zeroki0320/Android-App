@@ -36,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
         img_mail = (ImageView) findViewById(R.id.mail);
 
         registerForContextMenu(img_photo);
-        ????
+
     }
 
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity {
             populatePhotoContextMenu(menu);
 
         //create a menu for img_mail
-        if ????
+        if(v.getId() == img_mail.getId())
             populateMailContextMenu(menu);
     }
 
@@ -69,7 +69,7 @@ public class MainActivity extends ActionBarActivity {
 
     public boolean onContextItemSelected(MenuItem item) {
         super.onContextItemSelected(item);
-        switch (????) {
+        switch (item.getItemId()) {
             case aboutBtnID:
                 openDialog();
                 break;

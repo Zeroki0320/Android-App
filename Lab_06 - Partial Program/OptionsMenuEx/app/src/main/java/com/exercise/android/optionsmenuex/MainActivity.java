@@ -29,16 +29,16 @@ public class MainActivity extends ActionBarActivity {
 
 
     @Override
-    public boolean ????(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
         menu.add(0, aboutBtnID, 0, "About").setIcon(R.drawable.about);
-        menu.add(0, exitBtnID, 0, "Exit").setIcon(R.drawable.exit).????;
+        menu.add(0, exitBtnID, 0, "Exit").setIcon(R.drawable.exit);
         menu.add(0, helpBtnID, 0, "Help").setIcon(R.drawable.help);
 
-        SubMenu filesubmenu = menu.????("File").setIcon(R.drawable.file);
-        filesubmenu.????(R.drawable.file);
+        SubMenu filesubmenu = menu.addSubMenu("File").setIcon(R.drawable.file);
+        filesubmenu.setHeaderIcon(R.drawable.file);
         filesubmenu.add(0, openBtnID, 0, "Open").setIcon(R.drawable.search);
         filesubmenu.add(0, saveBtnID, 0, "Save");
         filesubmenu.add(0, delBtnID, 0, "Delete");
@@ -51,9 +51,9 @@ public class MainActivity extends ActionBarActivity {
     }
 
     @Override
-    public boolean ????(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
-        switch (item.????) {
+        switch (item.getItemId()) {
             case aboutBtnID:
                 openDialog();
                 break;
