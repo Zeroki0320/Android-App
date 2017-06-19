@@ -13,7 +13,7 @@ import android.view.SurfaceView;
 
 public class MainActivity extends ActionBarActivity {
 
-    class Panel extends ???? implements SurfaceHolder.Callback {
+    class Panel extends SurfaceView implements SurfaceHolder.Callback {
         private DrawingThread drawingThread;
         private Bitmap icon;
         int xPos = 100, yPos = 100;
@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
         @Override
-        public void ????(Canvas canvas) {
+        public void onDraw(Canvas canvas) {
             // COMPLETE THIS PART
             // The xPos and yPos are modified according to the moving direction.
             // The moving direction is changed when a border is reached.
@@ -47,6 +47,11 @@ public class MainActivity extends ActionBarActivity {
 
         public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
             // TODO Auto-generated method stub
+        }
+
+        @Override
+        public void surfaceDestroyed(SurfaceHolder holder) {
+
         }
 
         public void surfaceCreated(SurfaceHolder holder) {
