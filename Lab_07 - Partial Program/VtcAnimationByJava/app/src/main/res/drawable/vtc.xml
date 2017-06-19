@@ -1,0 +1,42 @@
+<animation-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+
+    <item
+        android:drawable="@drawable/vtc00"
+        android:duration="250"></item>
+    <item
+        android:drawable="@drawable/vtc01"
+        android:duration="250"></item>
+    <item
+        android:drawable="@drawable/vtc02"
+        android:duration="250"></item>
+    <item
+        android:drawable="@drawable/vtc03"
+        android:duration="250"></item>
+    <item
+        android:drawable="@drawable/vtc04"
+        android:duration="250"></item>
+    <item
+        android:drawable="@drawable/vtc05"
+        android:duration="250"></item>
+    <item
+        android:drawable="@drawable/vtc06"
+        android:duration="250"></item>
+    <item
+        android:drawable="@drawable/vtc07"
+        android:duration="250"></item>
+    <item
+        android:drawable="@drawable/vtc08"
+        android:duration="250"></item>
+    <item
+        android:drawable="@drawable/vtc09"
+        android:duration="250"></item>
+    <item
+        android:drawable="@drawable/vtc10"
+        android:duration="250"></item>
+
+</animation-list>
+
+    
+  
